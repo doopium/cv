@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development | Dhairya Jain</title>
+    <link rel="stylesheet" href="webdev.css"> <!-- Link to the webdev.css -->
+    <link rel="icon" href="image.png" type="image/x-icon" />
+</head>
+<body class="dark-mode">
+    <a href="index.html" class="logo">
+        <img src="cover.png" alt="Doopium Logo" style="height: 50px; width: auto;">
+    </a>
+    <!-- Web Development Section -->
+    <section id="webdev">
+        <div class="container">
+            <h2>My Web Development Projects</h2>
+            <p>Here are some of the web development projects I've worked on:</p>
+            <ul>
+                <li><strong>Project 1:</strong> A responsive personal portfolio website with modern design and animations.</li>
+                <li><strong>Project 2:</strong> E-commerce website for a local business, featuring a product catalog and payment integration.</li>
+                <li><strong>Project 3:</strong> A blog website built using WordPress and customized themes for dynamic content.</li>
+                <li><strong>Project 4:</strong> A task management web application with authentication and real-time updates using React and Firebase.</li>
+                <li><strong>Project 5:</strong> A social media dashboard built with HTML, CSS, and JavaScript to track and manage social media analytics.</li>
+                <li><strong>Project 6:</strong> A weather forecasting website using an API to provide real-time weather updates, built with HTML, CSS, and JavaScript.</li>
+                <li><strong>Project 7:</strong> A restaurant reservation system that allows customers to book tables and view availability, created with PHP and MySQL.</li>
+                <li><strong>Project 8:</strong> A photo gallery website using a grid layout with JavaScript to filter and sort images by categories.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Dhairya Jain. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle">🌞 Light Mode</button>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            toggleButton.textContent = body.classList.contains('dark-mode') ? '🌞 Light Mode' : '🌙 Dark Mode';
+        });
+    </script>
+</body>
+</html>
