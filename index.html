@@ -59,6 +59,74 @@
     .carousel-next {
       right: 10px;
     }
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 50px auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #8e8e8e;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+    }
+
+    .timeline-item.left {
+      left: 0;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -13px;
+      background-color: #fff;
+      border: 4px solid #8e8e8e;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-item.right::after {
+      left: -13px;
+    }
+
+    .content {
+      background-color: #444;
+      padding: 20px;
+      border-radius: 6px;
+    }
+
+    .timeline-btn {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .timeline-btn:hover {
+      color: #ffd700;
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
   </style>
 </head>
 <body class="dark-mode">
@@ -67,14 +135,42 @@
     <h1>Dhairya Jain</h1>
     <p>Developer | Designer | Analyst</p>
 
-    <div class="link-buttons">
-      <a href="webdev.html" class="link-btn">🌐 Web Development</a>
-      <a href="dataanalysis.html" class="link-btn">📊 Data Analysis</a>
-      <a href="https://github.com/doopium" class="link-btn" target="_blank">🐙 GitHub Profile</a>
-      <a href="https://drive.google.com/file/d/1S__trLRXR_-moTOe7Q3rmvOefoUbyS0F/view?usp=sharingl" class="link-btn" target="_blank">📄 View Resume</a>
-      <a href="mailto:jaindhairya709@gmail.com" class="link-btn">📧 Contact Me</a>
-      <a href="https://vsco.co/notsodhairyaa" class="link-btn" target="_blank">📷 VSCO</a>
-      <a href="https://www.linkedin.com/in/jaindhairya07/" class="link-btn" target="_blank">🔗 LinkedIn</a>
+    <div class="timeline">
+      <div class="timeline-item left">
+        <div class="content">
+          <a href="webdev.html" class="timeline-btn">🌐 Web Development</a>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="content">
+          <a href="dataanalysis.html" class="timeline-btn">📊 Data Analysis</a>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="content">
+          <a href="https://github.com/doopium" class="timeline-btn" target="_blank">🐙 GitHub Profile</a>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="content">
+          <a href="https://drive.google.com/file/d/1S__trLRXR_-moTOe7Q3rmvOefoUbyS0F/view?usp=sharingl" class="timeline-btn" target="_blank">📄 View Resume</a>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="content">
+          <a href="mailto:jaindhairya709@gmail.com" class="timeline-btn">📧 Contact Me</a>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="content">
+          <a href="https://vsco.co/notsodhairyaa" class="timeline-btn" target="_blank">📷 VSCO</a>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="content">
+          <a href="https://www.linkedin.com/in/jaindhairya07/" class="timeline-btn" target="_blank">🔗 LinkedIn</a>
+        </div>
+      </div>
     </div>
   </div>
   
