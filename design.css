@@ -1,0 +1,115 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffc107;
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    color: #212529;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.portfolio-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.portfolio-items div {
+    background-color: #2c2c2c;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-items div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #343a40;
+    color: #f8f9fa;
+    font-size: 1rem;
+    margin-top: 60px;
+    border-top: 3px solid #e1e1e1;
+}
+
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #f8f9fa;
+}
+
+body.dark-mode header {
+    background-color: #212121;
+    color: #ffffff;
+}
+
+body.dark-mode nav a {
+    color: #f8f9fa;
+}
+
+body.dark-mode h2 {
+    color: #f8f9fa;
+    border-color: #444;
+}
+
+body.dark-mode .portfolio-items div {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+body.dark-mode footer {
+    background-color: #121212;
+    color: #bbbbbb;
+}
+
+body, .portfolio-items div {
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
