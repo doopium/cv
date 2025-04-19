@@ -230,9 +230,12 @@ body.dark-mode h1,
 body.dark-mode p {
     color: #00ff00; /* Hacker green */
 }
-.linktree-container h1,
-.linktree-container p{
-    color:#000000;
+.linktree-container h1 {
+    color: #000000;
+}
+
+.linktree-container p {
+    color: #000000;
 }
 
 /* Responsive Styles for Timeline */
