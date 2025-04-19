@@ -126,6 +126,12 @@ body:not(.dark-mode) #webdev {
   background-color: #f9f9f9;
 }
 
+body:not(.dark-mode) #webdev h2 {
+    background-color: #ffffff;
+    color: #121212;
+
+  }
+
 body:not(.dark-mode) #webdev ul li {
   background-color: #e0e0e0;
   color: #121212;
