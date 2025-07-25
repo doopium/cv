@@ -1,10 +1,14 @@
 /* General Styles */
-body {
+html, body {
+  height: auto;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
   background-color: #121212;
   color: #f0f0f0;
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   line-height: 1.6;
 }
 
@@ -33,9 +37,8 @@ body {
 
 /* Linktree Container */
 .linktree-container {
-  /* max-width: 800px; */
   margin: 60px auto 0 auto;
-  padding: 40px 30px;
+  padding: 40px 30px 120px;
   text-align: center;
   background-color: #ffffff;
   border-radius: 10px;
@@ -56,6 +59,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 100%;
 }
 
 .link-btn {
@@ -66,6 +70,7 @@ body {
   border-radius: 8px;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  font-size: 1rem;
 }
 
 .link-btn:hover {
@@ -148,7 +153,6 @@ footer .container {
   text-align: left;
 }
 
-/* Timeline Items */
 .timeline-item {
   display: flex;
   justify-content: flex-start;
@@ -228,19 +232,15 @@ body.dark-mode .link-btn:hover {
 
 body.dark-mode h1, 
 body.dark-mode p {
-    color: #00ff00; /* Hacker green */
-}
-.linktree-container h1 {
-    color: #000000;
+  color: #00ff00; /* Hacker green */
 }
 
+.linktree-container h1,
 .linktree-container p {
-    color: #000000;
+  color: #000000;
 }
 
-/* Responsive Styles for Timeline */
-
-/* For tablets and laptops */
+/* Responsive Timeline */
 @media (max-width: 1024px) {
   .timeline {
     max-width: 800px;
@@ -255,25 +255,24 @@ body.dark-mode p {
   }
 }
 
-/*for large screen*/
+/* Large screen tweaks */
 @media (min-width:1000px){
-    .linktree-container{
-        height: 70vh;
-        width:70vw;
-        /* background-color:;   */
-    }
-    .link-buttons{
-        width:100%
-    }
-    .link-btn{
-        font-size:xx-large;
+  .linktree-container {
+    width: 70vw;
+    padding-bottom: 120px;
+  }
 
-    }
+  .link-buttons {
+    width: 100%;
+  }
+
+  .link-btn {
+    font-size: xx-large;
+  }
 }
 
-/* For phones */
+/* Phone and tablet adjustments */
 @media (max-width: 768px) {
-   
   .timeline {
     max-width: 90%;
   }
@@ -291,95 +290,92 @@ body.dark-mode p {
     left: 50%;
     transform: translateX(-50%);
   }
-}
 
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
+  header h1 {
+    font-size: 2.5rem;
+  }
 
-    section {
-        padding: 20px 0;
-    }
+  section {
+    padding: 20px 0;
+  }
 
-    li {
-        font-size: 1rem;
-    }
+  li {
+    font-size: 1rem;
+  }
 
-    #resume a {
-        font-size: 1rem;
-        padding: 8px 16px;
-    }
+  #resume a {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
 }
 
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 2rem;
-    }
+  header h1 {
+    font-size: 2rem;
+  }
 
-    header p {
-        font-size: 1rem;
-    }
+  header p {
+    font-size: 1rem;
+  }
 
-    li {
-        font-size: 0.9rem;
-    }
+  li {
+    font-size: 0.9rem;
+  }
 
-    #resume a {
-        font-size: 0.9rem;
-        padding: 6px 12px;
-    }
+  #resume a {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
 
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    nav ul li {
-        margin: 10px 0;
-    }
+  nav ul li {
+    margin: 10px 0;
+  }
 }
 
+/* Carousel Section */
 .carousel-container {
-  position: relative;  /* Set position relative to its container */
-  margin: 30px auto;
+  position: relative;
+  margin: 60px auto;
   text-align: center;
-  width: 90%;  /* Increased width */
+  width: 90%;
 }
 
-/* Carousel Images */
 .carousel img {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  max-height: 600px; /* Set max height for larger images */
+  max-height: 600px;
 }
 
-/* Carousel Arrows */
 .carousel-prev, .carousel-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background */
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   border: none;
   padding: 20px;
-  font-size: 3rem;  /* Increased font size */
+  font-size: 3rem;
   cursor: pointer;
   z-index: 100;
-  border-radius: 50%;  /* Make them circular */
+  border-radius: 50%;
   transition: background-color 0.3s ease;
 }
 
 .carousel-prev {
-  left: 15px;  /* Increased distance from the left */
+  left: 15px;
 }
 
 .carousel-next {
-  right: 15px;  /* Increased distance from the right */
+  right: 15px;
 }
 
 .carousel-prev:hover, .carousel-next:hover {
-  background-color: rgba(0, 0, 0, 0.9); /* Darker background on hover */
-  transform: translateY(-50%) scale(1.2); /* Increased scale effect on hover */
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.2);
 }
