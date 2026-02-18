@@ -3,136 +3,361 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dhairya Jain | Portfolio Links</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Dhairya Jain | Digital Product Engineer</title>
   <link rel="icon" href="image.png" type="image/png" />
-  <a href="index.html" class="logo">
-    <img src="cover.png" alt="Doopium Logo" style="height: 50px; width: auto;">
-  </a>
   <style>
-    .link-btn:hover {
-      background-color: #3a3a3a;
-      color: #694c4c;
-      transform: scale(1.05);
-      transition: all 0.3s ease;
-    }
-    /* Carousel Container */
-    .carousel-container {
-      margin: 30px auto;
-      text-align: center;
-      width: 80%;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
-    .carousel {
+    body {
+      background: radial-gradient(circle at top left, #1a1028, #0d0d12 60%);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* 3D Background Glow */
+    .bg-blob {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(139,92,246,0.4), transparent 70%);
+      top: 20%;
+      left: 10%;
+      filter: blur(80px);
+      z-index: -1;
+      animation: floatBlob 8s ease-in-out infinite;
+    }
+
+    @keyframes floatBlob {
+      0%,100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-30px) scale(1.1); }
+    }
+
+    /* 3D Card Effect */
+    .card {
+      transform-style: preserve-3d;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* NAV */
+    nav {
       display: flex;
-      overflow: hidden;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 0;
     }
 
-    .carousel-item {
-      min-width: 100%;
-      transition: transform 0.5s ease;
+    nav h2 {
+      font-weight: 600;
+      letter-spacing: 1px;
     }
 
-    .carousel-item img {
-      width: 100%;
-      border-radius: 10px;
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      margin-left: 25px;
+      transition: 0.3s;
     }
 
-    .carousel-prev, .carousel-next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 120px 0 100px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      background: linear-gradient(90deg, #c084fc, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #bbb;
+    }
+
+    .cta-buttons {
+      margin-top: 40px;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 30px;
       border: none;
-      padding: 10px;
-      font-size: 2rem;
       cursor: pointer;
-      z-index: 100;
+      margin: 10px;
+      font-weight: 500;
+      transition: 0.3s;
     }
 
-    .carousel-prev {
-      left: 10px;
+    .btn-primary {
+      background: linear-gradient(90deg, #8b5cf6, #c084fc);
+      color: white;
     }
 
-    .carousel-next {
-      right: 10px;
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(139,92,246,0.4);
     }
 
-    .spacer {
-      height: 140px;
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #ddd;
+      backdrop-filter: blur(6px);
     }
-    .linktree-container {
-      padding-bottom: 80px;
+
+    .btn-outline:hover {
+      border-color: #8b5cf6;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(139,92,246,0.4);
+    }
+
+    /* SECTION */
+    section {
+      padding: 80px 0;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2rem;
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 30px;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #8b5cf6;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      color: #bbb;
+    }
+
+    /* CERTIFICATES */
+    .certificate-card {
+      text-align: center;
+    }
+
+    .view-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      background: #8b5cf6;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .view-btn:hover {
+      background: #a78bfa;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      width: 80%;
+      height: 80%;
+      background: #111;
+      border-radius: 12px;
+      position: relative;
+      padding: 20px;
+    }
+
+    .modal-content embed {
+      width: 100%;
+      height: 100%;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
-<body class="dark-mode">
-  <div class="linktree-container">
-    <img src="EA9C1E96-9690-4417-B0EE-F148B8F7EC40_1_105_c.jpeg" alt="Dhairya Jain" class="profile-pic" />
-    <h1>Dhairya Jain</h1>
-    <p>Developer | Designer | Analyst</p>
+<body>
 
-    <div class="link-buttons">
-      <a href="webdev.html" class="link-btn">🌐 Web Development</a>
-      <a href="dataanalysis.html" class="link-btn">📊 Data Analysis</a>
-      <a href="design.html" class="link-btn">🎨 Designing</a>
-      <a href="https://github.com/doopium" class="link-btn" target="_blank">🐙 GitHub Profile</a>
-      <a href="https://www.linkedin.com/in/jaindhairya07/" class="link-btn" target="_blank">🔗 LinkedIn</a>
-      <a href="https://drive.google.com/file/d/1S__trLRXR_-moTOe7Q3rmvOefoUbyS0F/view?usp=sharingl" class="link-btn" target="_blank">📄 View Resume</a>
-      <a href="mailto:jaindhairya709@gmail.com" class="link-btn">📧 Contact Me</a>
-      <a href="https://vsco.co/doopium" class="link-btn" target="_blank">📷 VSCO</a>
-      <div class="spacer"></div>
+  <div class="bg-blob"></div>
+
+  <div class="container">
+    <nav>
+      <h2>Dhairya Jain</h2>
+      <div>
+        <a href="#work">Work</a>
+        <a href="#certificates">Certificates</a>
+        <a href="https://www.linkedin.com/in/jaindhairya07/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/doopium" target="_blank">GitHub</a>
+        <a href="https://drive.google.com/file/d/1S__trLRXR_-moTOe7Q3rmvOefoUbyS0F/view?usp=sharing" target="_blank">Resume</a>
+        <a href="https://vsco.co/notsodhairyaa" target="_blank">VSCO</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>Building digital products with clarity & precision.</h1>
+      <p>Developer. Designer. Problem Solver.</p>
+      <div class="cta-buttons">
+        <a href="#work"><button class="btn btn-primary">View Work</button></a>
+        <a href="mailto:jaindhairya709@gmail.com"><button class="btn btn-outline">Contact Me</button></a>
+      </div>
+    </div>
+
+    <section id="work">
+      <h2>Selected Work</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Web Development</h3>
+          <p>Modern responsive websites & interactive platforms.</p>
+        </div>
+        <div class="card">
+          <h3>Data Analysis</h3>
+          <p>Insights-driven dashboards & statistical modeling.</p>
+        </div>
+        <div class="card">
+          <h3>Product Design</h3>
+          <p>Clean, user-focused digital experiences.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates">
+      <h2>Certificates</h2>
+      <div class="grid">
+        <div class="card certificate-card">
+          <h3>Certificate 1</h3>
+          <button class="view-btn" onclick="openModal('certificates/certificate1.pdf')">View</button>
+        </div>
+        <div class="card certificate-card">
+          <h3>Certificate 2</h3>
+          <button class="view-btn" onclick="openModal('certificates/certificate2.pdf')">View</button>
+        </div>
+        <div class="card certificate-card">
+          <h3>Certificate 3</h3>
+          <button class="view-btn" onclick="openModal('certificates/certificate3.pdf')">View</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Dhairya Jain. Crafted with precision.
+    </footer>
+  </div>
+
+  <div id="certificateModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <embed id="modalEmbed" src="" type="application/pdf" />
     </div>
   </div>
 
-  <div class="carousel-container">
-    <h2>My Work Showcase</h2>
-    <div class="carousel">
-      <div class="carousel-item">
-        <img src="https://www.w3schools.com/w3images/fjords.jpg" alt="Project 1" />
-      </div>
-      <div class="carousel-item">
-        <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Project 2" />
-      </div>
-      <div class="carousel-item">
-        <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Project 3" />
-      </div>
-    </div>
-    <button class="carousel-prev" onclick="moveSlide(-1)">❮</button>
-    <button class="carousel-next" onclick="moveSlide(1)">❯</button>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Dhairya Jain. All rights reserved.</p>
-    <p>Made with 💻 and ❤️</p>
-  </footer>
-  <button id="theme-toggle" class="theme-toggle">🌞 Light Mode</button>
   <script>
-    const toggleButton = document.getElementById('theme-toggle');
-    const body = document.body;
-
-    toggleButton.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      toggleButton.textContent = body.classList.contains('dark-mode') ? '🌞 Light Mode' : '🌙 Dark Mode';
-    });
-
-    let currentSlide = 0;
-
-    function moveSlide(step) {
-      const slides = document.querySelectorAll('.carousel-item');
-      const totalSlides = slides.length;
-      currentSlide = (currentSlide + step + totalSlides) % totalSlides;
-      updateCarousel();
+    function openModal(pdfPath) {
+      document.getElementById('certificateModal').style.display = "flex";
+      document.getElementById('modalEmbed').src = pdfPath;
     }
 
-    function updateCarousel() {
-      const slides = document.querySelectorAll('.carousel-item');
-      slides.forEach((slide, index) => {
-        slide.style.transform = `translateX(-${currentSlide * 100}%)`;
+    function closeModal() {
+      document.getElementById('certificateModal').style.display = "none";
+      document.getElementById('modalEmbed').src = "";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('certificateModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+
+    // 3D Tilt Effect
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
+
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
       });
-    }
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+      });
+    });
   </script>
+
 </body>
 </html>
