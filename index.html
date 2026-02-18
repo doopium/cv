@@ -59,6 +59,23 @@
       justify-content: space-between;
       align-items: center;
       padding: 25px 0;
+      width: 100%;
+    }
+    .nav-left {
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: 0.8px;
+    }
+
+    .nav-name {
+      background: linear-gradient(90deg, #c084fc, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
     }
 
     nav h2 {
@@ -75,6 +92,41 @@
 
     nav a:hover {
       color: #fff;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 1rem;
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    /* FIXED LOGO */
+    #floatingLogo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border-radius: 12px;
+      z-index: 1500;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 30px rgba(139,92,246,0.4);
+    }
+
+    #floatingLogo:hover {
+      transform: scale(1.15);
     }
 
     /* HERO */
@@ -241,16 +293,55 @@
     html {
       scroll-behavior: smooth;
     }
+
+    /* RELOAD POPUP */
+    .reload-popup {
+      position: fixed;
+      top: 60%;
+      left: 60%;
+      will-change: left, top;
+      background: rgba(20,20,35,0.95);
+      border: 1px solid rgba(124,58,237,0.4);
+      backdrop-filter: blur(15px);
+      padding: 20px 26px;
+      border-radius: 14px;
+      box-shadow: 0 0 40px rgba(124,58,237,0.25);
+      z-index: 2000;
+      cursor: pointer;
+      display: none;
+      max-width: 260px;
+      transition: left 2.5s ease-in-out, top 2.5s ease-in-out, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .reload-popup:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 0 60px rgba(124,58,237,0.5);
+    }
+
+    .reload-popup h4 {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      color: #a78bfa;
+    }
+
+    .reload-popup p {
+      font-size: 0.8rem;
+      color: #bbb;
+    }
+
   </style>
 </head>
 <body>
 
   <div class="bg-blob"></div>
+  <img src="image.png" alt="Dhairya Jain Logo" id="floatingLogo" />
 
   <div class="container">
     <nav>
-      <h2>Dhairya Jain</h2>
-      <div>
+      <div class="nav-left">
+        <span class="nav-name">Dhairya Jain</span>
+      </div>
+      <div class="nav-right">
         <a href="#work">Work</a>
         <a href="#certificates">Certificates</a>
         <a href="https://www.linkedin.com/in/jaindhairya07/" target="_blank">LinkedIn</a>
@@ -308,6 +399,11 @@
     <footer>
       © 2025 Dhairya Jain. Crafted with precision.
     </footer>
+
+    <div class="reload-popup" id="reloadPopup" onclick="goToSpecialPage()">
+      <h4>  💸 Click here </h4>
+      <p>Click to view something special.</p>
+    </div>
   </div>
 
   <div id="certificateModal" class="modal">
@@ -318,6 +414,19 @@
   </div>
 
   <script>
+    // SHOW POPUP ON RELOAD
+    window.addEventListener('load', () => {
+      const popup = document.getElementById('reloadPopup');
+      setTimeout(() => {
+        popup.style.display = 'block';
+      }, 800);
+    });
+
+    function goToSpecialPage() {
+      window.location.href = "newcv.html"; 
+      // You can change this to any page you want
+    }
+
     function openModal(pdfPath) {
       document.getElementById('certificateModal').style.display = "flex";
       document.getElementById('modalEmbed').src = pdfPath;
@@ -334,6 +443,38 @@
         closeModal();
       }
     }
+
+    const floatingLogo = document.getElementById("floatingLogo");
+    floatingLogo.addEventListener("click", () => {
+      window.location.href = "#";
+    });
+
+    // SMOOTH RANDOM MOVING POPUP
+    const movingPopup = document.getElementById("reloadPopup");
+
+    function movePopupSmoothly() {
+      if (!movingPopup) return;
+
+      const padding = 120;
+      const maxX = window.innerWidth - padding;
+      const maxY = window.innerHeight - padding;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      movingPopup.style.left = randomX + "px";
+      movingPopup.style.top = randomY + "px";
+    }
+
+    // Initial random position when visible
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        movePopupSmoothly();
+      }, 900);
+    });
+
+    // Move every 4 seconds smoothly
+    setInterval(movePopupSmoothly, 4000);
 
     // 3D Tilt Effect
     const cards = document.querySelectorAll('.card');
