@@ -19,7 +19,6 @@
       overflow-x: hidden;
     }
 
-    /* 3D Background Glow */
     .bg-blob {
       position: fixed;
       width: 400px;
@@ -37,7 +36,6 @@
       50% { transform: translateY(-30px) scale(1.1); }
     }
 
-    /* 3D Card Effect */
     .card {
       transform-style: preserve-3d;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -53,7 +51,6 @@
       margin: auto;
     }
 
-    /* NAV */
     nav {
       display: flex;
       justify-content: space-between;
@@ -61,6 +58,7 @@
       padding: 25px 0;
       width: 100%;
     }
+
     .nav-left {
       font-weight: 800;
       font-size: 1.35rem;
@@ -73,15 +71,7 @@
       -webkit-text-fill-color: transparent;
     }
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-    }
-
-    nav h2 {
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
+    .nav-right { display: flex; align-items: center; }
 
     nav a {
       color: #aaa;
@@ -90,27 +80,8 @@
       transition: 0.3s;
     }
 
-    nav a:hover {
-      color: #fff;
-    }
+    nav a:hover { color: #fff; }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      font-size: 1rem;
-    }
-
-    .logo img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-      border-radius: 8px;
-    }
-
-    /* FIXED LOGO */
     #floatingLogo {
       position: fixed;
       top: 20px;
@@ -125,11 +96,8 @@
       box-shadow: 0 0 30px rgba(139,92,246,0.4);
     }
 
-    #floatingLogo:hover {
-      transform: scale(1.15);
-    }
+    #floatingLogo:hover { transform: scale(1.15); }
 
-    /* HERO */
     .hero {
       text-align: center;
       padding: 120px 0 100px;
@@ -150,9 +118,7 @@
       color: #bbb;
     }
 
-    .cta-buttons {
-      margin-top: 40px;
-    }
+    .cta-buttons { margin-top: 40px; }
 
     .btn {
       padding: 12px 28px;
@@ -187,10 +153,7 @@
       box-shadow: 0 0 20px rgba(139,92,246,0.4);
     }
 
-    /* SECTION */
-    section {
-      padding: 80px 0;
-    }
+    section { padding: 80px 0; }
 
     section h2 {
       text-align: center;
@@ -198,7 +161,6 @@
       font-size: 2rem;
     }
 
-    /* CARDS */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -219,42 +181,81 @@
       border-color: #8b5cf6;
     }
 
-    .card h3 {
-      margin-bottom: 15px;
-    }
+    .card h3 { margin-bottom: 12px; }
 
     .card p {
       color: #bbb;
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    /* PLATFORM LINK PILLS */
+    .platform-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .platform-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(139,92,246,0.35);
+      color: #a78bfa;
+      text-decoration: none;
+      background: rgba(139,92,246,0.08);
+      transition: all 0.25s;
+      position: relative;
+      z-index: 2;
+    }
+
+    .platform-link:hover {
+      background: rgba(139,92,246,0.28);
+      border-color: #a78bfa;
+      color: #fff;
+      transform: translateY(-2px);
     }
 
     /* CERTIFICATES */
-    .certificate-card {
-      text-align: center;
+    .certificate-card { text-align: center; }
+
+    .cert-platform {
+      font-size: 0.78rem;
+      color: #777;
+      margin-bottom: 18px;
+      letter-spacing: 0.4px;
     }
 
     .view-btn {
-      margin-top: 20px;
-      padding: 10px 20px;
+      display: inline-block;
+      padding: 10px 22px;
       border-radius: 20px;
       border: none;
       background: #8b5cf6;
       color: white;
       cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
       transition: 0.3s;
+      position: relative;
+      z-index: 2;
     }
 
     .view-btn:hover {
       background: #a78bfa;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139,92,246,0.4);
     }
 
-    /* MODAL */
     .modal {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: rgba(0,0,0,0.8);
       justify-content: center;
       align-items: center;
@@ -262,23 +263,18 @@
     }
 
     .modal-content {
-      width: 80%;
-      height: 80%;
+      width: 80%; height: 80%;
       background: #111;
       border-radius: 12px;
       position: relative;
       padding: 20px;
     }
 
-    .modal-content embed {
-      width: 100%;
-      height: 100%;
-    }
+    .modal-content embed { width: 100%; height: 100%; }
 
     .close-modal {
       position: absolute;
-      top: 10px;
-      right: 20px;
+      top: 10px; right: 20px;
       font-size: 28px;
       cursor: pointer;
     }
@@ -290,15 +286,11 @@
       font-size: 0.9rem;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
-    /* RELOAD POPUP */
     .reload-popup {
       position: fixed;
-      top: 60%;
-      left: 60%;
+      top: 60%; left: 60%;
       will-change: left, top;
       background: rgba(20,20,35,0.95);
       border: 1px solid rgba(124,58,237,0.4);
@@ -328,7 +320,6 @@
       font-size: 0.8rem;
       color: #bbb;
     }
-
   </style>
 </head>
 <body>
@@ -338,21 +329,19 @@
 
   <div class="container">
     <nav>
-      <div class="nav-left">
-        <span class="nav-name">Dhairya Jain</span>
-      </div>
+      <div class="nav-left"><span class="nav-name">Dhairya Jain</span></div>
       <div class="nav-right">
         <a href="#work">Work</a>
         <a href="#certificates">Certificates</a>
-        <a href="https://www.linkedin.com/in/jaindhairya07/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/doopium" target="_blank">GitHub</a>
-        <a href="https://drive.google.com/file/d/1S__trLRXR_-moTOe7Q3rmvOefoUbyS0F/view?usp=sharing" target="_blank">Resume</a>
-        <a href="https://vsco.co/notsodhairyaa" target="_blank">VSCO</a>
+        <a href="https://www.linkedin.com/in/jaindhairya07/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/doopium" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://drive.google.com/file/d/1S__trLRXR_-moTOe7Q3rmvOefoUbyS0F/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="https://vsco.co/notsodhairyaa" target="_blank" rel="noopener noreferrer">VSCO</a>
       </div>
     </nav>
 
     <div class="hero">
-      <h1>Building digital products with clarity & precision.</h1>
+      <h1>Building digital products with clarity &amp; precision.</h1>
       <p>Developer. Designer. Problem Solver.</p>
       <div class="cta-buttons">
         <a href="#work"><button class="btn btn-primary">View Work</button></a>
@@ -360,48 +349,77 @@
       </div>
     </div>
 
+    <!-- WORK -->
     <section id="work">
       <h2>Selected Work</h2>
       <div class="grid">
+
         <div class="card">
           <h3>Web Development</h3>
-          <p>Modern responsive websites & interactive platforms.</p>
+          <p>Modern responsive websites &amp; interactive platforms.</p>
+          <div class="platform-links">
+            <a href="https://github.com/doopium/Clausio" target="_blank" rel="noopener noreferrer" class="platform-link">&#9670; Clausio</a>
+            <a href="https://github.com/doopium/lockedin" target="_blank" rel="noopener noreferrer" class="platform-link">&#9670; LockedIn</a>
+            <a href="https://github.com/doopium" target="_blank" rel="noopener noreferrer" class="platform-link">&#9670; GitHub</a>
+          </div>
         </div>
+
         <div class="card">
           <h3>Data Analysis</h3>
-          <p>Insights-driven dashboards & statistical modeling.</p>
+          <p>Insights-driven dashboards &amp; statistical modeling.</p>
+          <div class="platform-links">
+            <a href="https://github.com/doopium/covid19trends" target="_blank" rel="noopener noreferrer" class="platform-link">&#9670; COVID-19 Trends</a>
+            <a href="https://github.com/doopium/Co-Subscription-Analysis-of-Real-OAuth-Data" target="_blank" rel="noopener noreferrer" class="platform-link">&#9670; OAuth Analysis</a>
+            <a href="https://github.com/doopium" target="_blank" rel="noopener noreferrer" class="platform-link">&#9670; GitHub</a>
+          </div>
         </div>
+
         <div class="card">
           <h3>Product Design</h3>
           <p>Clean, user-focused digital experiences.</p>
+          <div class="platform-links">
+            <a href="https://vsco.co/notsodhairyaa" target="_blank" rel="noopener noreferrer" class="platform-link">&#9673; VSCO</a>
+            <a href="https://www.linkedin.com/in/jaindhairya07/" target="_blank" rel="noopener noreferrer" class="platform-link">in LinkedIn</a>
+            <a href="https://drive.google.com/file/d/1S__trLRXR_-moTOe7Q3rmvOefoUbyS0F/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="platform-link">&#8599; Resume</a>
+          </div>
         </div>
+
       </div>
     </section>
 
+    <!-- CERTIFICATES -->
     <section id="certificates">
       <h2>Certificates</h2>
       <div class="grid">
+
         <div class="card certificate-card">
           <h3>Certificate 1</h3>
-          <button class="view-btn" onclick="openModal('certificates/certificate1.pdf')">View</button>
+          <p class="cert-platform">Cognitive Class &middot; 2024</p>
+          <a href="https://courses.cognitiveclass.ai/certificates/2fe524fa3dce4cb792f4128361ad6135"
+             target="_blank" rel="noopener noreferrer" class="view-btn">View Certificate &#8599;</a>
         </div>
+
         <div class="card certificate-card">
           <h3>Certificate 2</h3>
-          <button class="view-btn" onclick="openModal('certificates/certificate2.pdf')">View</button>
+          <p class="cert-platform">Credly &middot; 2024</p>
+          <a href="https://www.credly.com/badges/ba78c0ac-325b-4e45-8eb1-96b052a7dce4"
+             target="_blank" rel="noopener noreferrer" class="view-btn">View Certificate &#8599;</a>
         </div>
+
         <div class="card certificate-card">
           <h3>Certificate 3</h3>
-          <button class="view-btn" onclick="openModal('certificates/certificate3.pdf')">View</button>
+          <p class="cert-platform">Cognitive Class &middot; 2023</p>
+          <a href="https://courses.cognitiveclass.ai/certificates/e7296b4426fd4233b167171000bf741d"
+             target="_blank" rel="noopener noreferrer" class="view-btn">View Certificate &#8599;</a>
         </div>
+
       </div>
     </section>
 
-    <footer>
-      © 2025 Dhairya Jain. Crafted with precision.
-    </footer>
+    <footer>&#169; 2025 Dhairya Jain. Crafted with precision.</footer>
 
     <div class="reload-popup" id="reloadPopup" onclick="goToSpecialPage()">
-      <h4>  💸 Click here </h4>
+      <h4>👻 Click here</h4>
       <p>Click to view something special.</p>
     </div>
   </div>
@@ -414,23 +432,13 @@
   </div>
 
   <script>
-    // SHOW POPUP ON RELOAD
     window.addEventListener('load', () => {
-      const popup = document.getElementById('reloadPopup');
       setTimeout(() => {
-        popup.style.display = 'block';
+        document.getElementById('reloadPopup').style.display = 'block';
       }, 800);
     });
 
-    function goToSpecialPage() {
-      window.location.href = "newcv.html"; 
-      // You can change this to any page you want
-    }
-
-    function openModal(pdfPath) {
-      document.getElementById('certificateModal').style.display = "flex";
-      document.getElementById('modalEmbed').src = pdfPath;
-    }
+    function goToSpecialPage() { window.location.href = "newcv.html"; }
 
     function closeModal() {
       document.getElementById('certificateModal').style.display = "none";
@@ -439,61 +447,33 @@
 
     window.onclick = function(event) {
       const modal = document.getElementById('certificateModal');
-      if (event.target === modal) {
-        closeModal();
-      }
+      if (event.target === modal) closeModal();
     }
 
-    const floatingLogo = document.getElementById("floatingLogo");
-    floatingLogo.addEventListener("click", () => {
+    document.getElementById("floatingLogo").addEventListener("click", () => {
       window.location.href = "#";
     });
 
-    // SMOOTH RANDOM MOVING POPUP
     const movingPopup = document.getElementById("reloadPopup");
 
     function movePopupSmoothly() {
       if (!movingPopup) return;
-
       const padding = 120;
-      const maxX = window.innerWidth - padding;
-      const maxY = window.innerHeight - padding;
-
-      const randomX = Math.random() * maxX;
-      const randomY = Math.random() * maxY;
-
-      movingPopup.style.left = randomX + "px";
-      movingPopup.style.top = randomY + "px";
+      movingPopup.style.left = (Math.random() * (window.innerWidth  - padding)) + "px";
+      movingPopup.style.top  = (Math.random() * (window.innerHeight - padding)) + "px";
     }
 
-    // Initial random position when visible
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        movePopupSmoothly();
-      }, 900);
-    });
-
-    // Move every 4 seconds smoothly
+    window.addEventListener('load', () => { setTimeout(movePopupSmoothly, 900); });
     setInterval(movePopupSmoothly, 4000);
 
-    // 3D Tilt Effect
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach(card => {
+    document.querySelectorAll('.card').forEach(card => {
       card.addEventListener('mousemove', (e) => {
+        if (e.target.closest('a')) return;
         const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = ((y - centerY) / centerY) * -8;
-        const rotateY = ((x - centerX) / centerX) * 8;
-
+        const rotateX = (((e.clientY - rect.top)  / rect.height) - 0.5) * -8;
+        const rotateY = (((e.clientX - rect.left) / rect.width)  - 0.5) *  8;
         card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
       });
-
       card.addEventListener('mouseleave', () => {
         card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
       });
