@@ -192,7 +192,7 @@
     .project-tags { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
     .tag { font-family: var(--mono); font-size: 0.7rem; padding: 4px 10px; border-radius: 4px; background: rgba(124,58,237,0.15); color: var(--accent-light); }
     .project-arrow { color: var(--muted); transition: all 0.2s; font-size: 1.2rem; margin-left: 16px; }
-    .project-row:hover .project-arrowz { color: var(--accent-light); transform: translateX(4px); }
+    .project-row:hover .project-arrow { color: var(--accent-light); transform: translateX(4px); }
 
     /* TIMELINE */
     .timeline { position: relative; padding-left: 30px; }
@@ -215,13 +215,23 @@
     /* CERTIFICATES */
     .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
     .cert-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px; backdrop-filter: blur(10px); transition: all 0.3s; position: relative; overflow: hidden; }
-    .cert-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(124,58,237,0.08), transparent); opacity: 0; transition: opacity 0.3s; }
+    .cert-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(124,58,237,0.08), transparent); opacity: 0; transition: opacity 0.3s; pointer-events: none; }
     .cert-card:hover::before { opacity: 1; }
     .cert-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-4px); }
     .cert-icon { font-size: 2rem; margin-bottom: 16px; }
     .cert-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
     .cert-card p { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); margin-bottom: 20px; }
-    .cert-btn { font-family: var(--display); font-size: 0.8rem; font-weight: 600; padding: 9px 18px; border-radius: 6px; border: 1px solid var(--border); background: transparent; color: var(--text); transition: all 0.2s; }
+    .cert-btn {
+      display: inline-block;
+      font-family: var(--display); font-size: 0.8rem; font-weight: 600;
+      padding: 9px 18px; border-radius: 6px;
+      border: 1px solid var(--border);
+      background: transparent; color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s;
+      position: relative; z-index: 2;
+      cursor: pointer !important;
+    }
     .cert-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 
     /* CONTACT */
@@ -239,18 +249,6 @@
     .form-group input:focus, .form-group textarea:focus { border-color: var(--accent-light); }
     .form-group textarea { min-height: 120px; }
     .form-success { display: none; font-family: var(--mono); font-size: 0.85rem; color: #22c55e; padding: 12px; border: 1px solid rgba(34,197,94,0.3); border-radius: 8px; text-align: center; }
-
-    /* MODAL */
-    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(10px); }
-    .modal.open { display: flex; }
-    .modal-box { background: #0f0e1a; border: 1px solid var(--border); border-radius: 16px; width: 85%; max-width: 900px; height: 80vh; position: relative; overflow: hidden; animation: modalUp 0.3s cubic-bezier(0.16,1,0.3,1); }
-    @keyframes modalUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; border-bottom: 1px solid var(--border); }
-    .modal-title { font-weight: 700; }
-    .modal-close { background: none; border: none; color: var(--muted); font-size: 1.5rem; transition: color 0.2s; }
-    .modal-close:hover { color: #fff; }
-    .modal-body { height: calc(100% - 70px); }
-    .modal-body embed { width: 100%; height: 100%; }
 
     /* FOOTER */
     footer { padding: 40px 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
@@ -296,7 +294,7 @@
     <a href="#skills" onclick="closeMobile()">Skills</a>
     <a href="#certificates" onclick="closeMobile()">Certificates</a>
     <a href="#contact" onclick="closeMobile()">Contact</a>
-    <a href="https://drive.google.com/file/d/1S__trLRXR_-moTOe7Q3rmvOefoUbyS0F/view?usp=sharing" target="_blank">Resume ↗</a>
+    <a href="https://drive.google.com/file/d/1S__trLRXR_-moTOe7Q3rmvOefoUbyS0F/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume ↗</a>
   </div>
 
   <div class="container">
@@ -311,9 +309,9 @@
         <a href="#skills">Skills</a>
         <a href="#certificates">Certificates</a>
         <a href="#contact">Contact</a>
-        <a href="https://www.linkedin.com/in/jaindhairya07/" target="_blank">LinkedIn ↗</a>
-        <a href="https://github.com/doopium" target="_blank">GitHub ↗</a>
-        <a href="https://drive.google.com/file/d/1S__trLRXR_-moTOe7Q3rmvOefoUbyS0F/view?usp=sharing" target="_blank" class="btn btn-primary" style="padding:8px 18px;font-size:0.82rem;">Resume</a>
+        <a href="https://www.linkedin.com/in/jaindhairya07/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/doopium" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://drive.google.com/file/d/1S__trLRXR_-moTOe7Q3rmvOefoUbyS0F/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding:8px 18px;font-size:0.82rem;">Resume</a>
       </div>
       <div class="hamburger" id="hamburger" onclick="toggleMobile()">
         <span></span><span></span><span></span>
@@ -335,7 +333,7 @@
         <div class="hero-actions">
           <a href="#work" class="btn btn-primary">View Work</a>
           <a href="#contact" class="btn btn-ghost">Get in Touch</a>
-          <a href="https://vsco.co/doopium" target="_blank" class="btn btn-ghost">VSCO ↗</a>
+          <a href="https://vsco.co/notsodhairyaa" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">VSCO ↗</a>
         </div>
       </div>
       <div class="hero-right">
@@ -516,36 +514,57 @@
         <div class="section-divider"></div>
       </div>
       <div class="certs-grid reveal">
+
         <div class="cert-card">
           <div class="cert-icon">🎓</div>
           <h3>Certificate 1</h3>
           <p>Issued · 2024</p>
-          <a href="https://courses.cognitiveclass.ai/certificates/2fe524fa3dce4cb792f4128361ad6135" class="cert-btn" onclick="window.open(this.href, '_blank'); return false;">View Certificate ↗</a>
+          <a href="https://courses.cognitiveclass.ai/certificates/2fe524fa3dce4cb792f4128361ad6135"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="cert-btn">View Certificate ↗</a>
         </div>
+
         <div class="cert-card">
           <div class="cert-icon">📊</div>
           <h3>Certificate 2</h3>
           <p>Issued · 2024</p>
-          <a href="https://www.credly.com/badges/ba78c0ac-325b-4e45-8eb1-96b052a7dce4" class="cert-btn" onclick="window.open(this.href, '_blank'); return false;">View Certificate ↗</a>
+          <a href="https://www.credly.com/badges/ba78c0ac-325b-4e45-8eb1-96b052a7dce4"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="cert-btn">View Certificate ↗</a>
         </div>
+
         <div class="cert-card">
           <div class="cert-icon">🛠️</div>
           <h3>Certificate 3</h3>
           <p>Issued · 2023</p>
-          <a href="https://courses.cognitiveclass.ai/certificates/e7296b4426fd4233b167171000bf741d" class="cert-btn" onclick="window.open(this.href, '_blank'); return false;">View Certificate ↗</a>
+          <a href="https://courses.cognitiveclass.ai/certificates/e7296b4426fd4233b167171000bf741d"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="cert-btn">View Certificate ↗</a>
         </div>
+
         <div class="cert-card">
           <div class="cert-icon">🎨</div>
           <h3>Certificate 4</h3>
           <p>Issued · 2023</p>
-          <a href="https://www.credly.com/badges/eeb498eb-9dc7-4681-a35d-6b86d425a5c4" class="cert-btn" onclick="window.open(this.href, '_blank'); return false;">View Certificate ↗</a>
+          <a href="https://www.credly.com/badges/eeb498eb-9dc7-4681-a35d-6b86d425a5c4"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="cert-btn">View Certificate ↗</a>
         </div>
+
         <div class="cert-card">
           <div class="cert-icon">⚡</div>
           <h3>Certificate 5</h3>
           <p>Issued · 2022</p>
-          <a href="https://courses.cognitiveclass.ai/certificates/e7296b4426fd4233b167171000bf741d" class="cert-btn" onclick="window.open(this.href, '_blank'); return false;">View Certificate ↗</a>
+          <a href="https://courses.cognitiveclass.ai/certificates/e7296b4426fd4233b167171000bf741d"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="cert-btn">View Certificate ↗</a>
         </div>
+
       </div>
     </section>
 
@@ -562,9 +581,9 @@
           <p>I'm open to freelance opportunities, collaborations, and full-time roles. Drop a message or reach out directly.</p>
           <div class="contact-socials">
             <a href="mailto:jaindhairya709@gmail.com" class="social-link"><span class="icon">✉</span> jaindhairya709@gmail.com</a>
-            <a href="https://www.linkedin.com/in/jaindhairya07/" target="_blank" class="social-link"><span class="icon">in</span> linkedin.com/in/jaindhairya07</a>
-            <a href="https://github.com/doopium" target="_blank" class="social-link"><span class="icon">◆</span> github.com/doopium</a>
-            <a href="https://vsco.co/doopium" target="_blank" class="social-link"><span class="icon">◉</span> vsco.co/doopium</a>
+            <a href="https://www.linkedin.com/in/jaindhairya07/" target="_blank" rel="noopener noreferrer" class="social-link"><span class="icon">in</span> linkedin.com/in/jaindhairya07</a>
+            <a href="https://github.com/doopium" target="_blank" rel="noopener noreferrer" class="social-link"><span class="icon">◆</span> github.com/doopium</a>
+            <a href="https://vsco.co/notsodhairyaa" target="_blank" rel="noopener noreferrer" class="social-link"><span class="icon">◉</span> vsco.co/notsodhairyaa</a>
           </div>
         </div>
         <div class="contact-right">
@@ -591,39 +610,25 @@
     <footer>
       <div class="footer-left">© 2025 <span>Dhairya Jain</span>. Crafted with precision.</div>
       <div class="footer-right">
-        <a href="https://www.linkedin.com/in/jaindhairya07/" target="_blank" style="color:var(--muted);text-decoration:none">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/jaindhairya07/" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:none">LinkedIn</a>
         <div class="dot"></div>
-        <a href="https://github.com/doopium" target="_blank" style="color:var(--muted);text-decoration:none">GitHub</a>
+        <a href="https://github.com/doopium" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:none">GitHub</a>
         <div class="dot"></div>
-        <a href="https://vsco.co/doopium" target="_blank" style="color:var(--muted);text-decoration:none">VSCO</a>
+        <a href="https://vsco.co/notsodhairyaa" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:none">VSCO</a>
         <div class="dot"></div>
-        <a href="https://drive.google.com/file/d/1S__trLRXR_-moTOe7Q3rmvOefoUbyS0F/view?usp=sharing" target="_blank" style="color:var(--muted);text-decoration:none">Resume</a>
+        <a href="https://drive.google.com/file/d/1S__trLRXR_-moTOe7Q3rmvOefoUbyS0F/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:none">Resume</a>
       </div>
     </footer>
   </div>
 
-  <!-- MODAL -->
-  <div class="modal" id="certModal">
-    <div class="modal-box">
-      <div class="modal-header">
-        <div class="modal-title" id="modalTitle">Certificate</div>
-        <button class="modal-close" onclick="closeModal()">✕</button>
-      </div>
-      <div class="modal-body">
-        <embed id="modalEmbed" src="" type="application/pdf" />
-      </div>
-    </div>
-  </div>
-
   <script>
-    // ── CURSOR (pixel-perfect) ──────────────────────────
+    // ── CURSOR ──────────────────────────────────────────
     const cursor = document.getElementById('cursor');
     const trail  = document.getElementById('cursor-trail');
     let mx = 0, my = 0, tx = 0, ty = 0;
 
     document.addEventListener('mousemove', e => {
-      mx = e.clientX;
-      my = e.clientY;
+      mx = e.clientX; my = e.clientY;
       cursor.style.left = mx + 'px';
       cursor.style.top  = my + 'px';
     });
@@ -686,23 +691,6 @@
     const skillsSec = document.getElementById('skillsSection');
     if (skillsSec) barsIo.observe(skillsSec);
 
-    // ── MODAL ───────────────────────────────────────────
-    function openModal(pdf, title) {
-      document.getElementById('certModal').classList.add('open');
-      document.getElementById('modalEmbed').src = pdf;
-      document.getElementById('modalTitle').textContent = title;
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal() {
-      document.getElementById('certModal').classList.remove('open');
-      document.getElementById('modalEmbed').src = '';
-      document.body.style.overflow = '';
-    }
-    document.getElementById('certModal').addEventListener('click', e => {
-      if (e.target === document.getElementById('certModal')) closeModal();
-    });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
     // ── PROJECTS ────────────────────────────────────────
     function openProject(url) { window.open(url, '_blank'); }
 
@@ -732,6 +720,8 @@
     // ── CARD TILT ───────────────────────────────────────
     document.querySelectorAll('.cert-card, .stat-item').forEach(card => {
       card.addEventListener('mousemove', e => {
+        // Don't tilt if hovering over the button
+        if (e.target.classList.contains('cert-btn')) return;
         const r = card.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width  - 0.5;
         const y = (e.clientY - r.top)  / r.height - 0.5;
