@@ -1,6 +1,6 @@
 # 💼 CV & Portfolio Site - Dhairya Jain
 
-This is a personal website repository that showcases different skill domains and portfolios of Dhairya Jain, including data analysis, web development, and design. It includes multiple HTML pages styled with CSS, hosted at **www.doopium.co** using GitHub Pages.
+This is a personal website repository that showcases different skill domains and portfolios of Dhairya Jain, including data analysis, web development, and design. It includes multiple HTML pages styled with CSS, hosted at **www.doopium.in** using GitHub Pages.
 
 ---
 
